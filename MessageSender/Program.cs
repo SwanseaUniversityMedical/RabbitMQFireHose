@@ -26,8 +26,6 @@ class MessageSender
             directoryPath = Environment.GetEnvironmentVariable("RABBITMQ_DIR") ??
                             Path.Combine(Environment.CurrentDirectory, "firehose");
 
-        directoryPath = @"C:\temp\loadingbay";
-
         if (!Directory.Exists(directoryPath))
         {
             Directory.CreateDirectory(directoryPath);
