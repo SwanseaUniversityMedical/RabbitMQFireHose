@@ -17,7 +17,7 @@ class MessageSender
         if (args.Length > 0)
             rabbitHost = args[0];
         else
-            rabbitHost = Environment.GetEnvironmentVariable("RABBITMQ_HOST") ?? "192.168.0.24";
+            rabbitHost = Environment.GetEnvironmentVariable("RABBITMQ_HOST") ?? "localhost";
 
         string directoryPath;
         if (args.Length > 1)
