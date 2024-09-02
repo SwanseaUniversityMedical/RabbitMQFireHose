@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RabbitFireHose": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

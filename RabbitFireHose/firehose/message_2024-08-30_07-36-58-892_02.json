@@ -1,0 +1,26 @@
+{
+  "Timestamp": "2024-08-30 07:36:58.892",
+  "MessageBody": "{\"EventName\":\"s3:ObjectCreated:Put\",\"Key\":\"ingest/simon/alcohol_ODV3.csv\",\"Records\":[{\"eventVersion\":\"2.0\",\"eventSource\":\"minio:s3\",\"awsRegion\":\"\",\"eventTime\":\"2024-08-30T07:36:58.671Z\",\"eventName\":\"s3:ObjectCreated:Put\",\"userIdentity\":{\"principalId\":\"minio\"},\"requestParameters\":{\"principalId\":\"minio\",\"region\":\"\",\"sourceIPAddress\":\"127.0.0.1\"},\"responseElements\":{\"x-amz-id-2\":\"e0c385c033c4356721cc9121d3109c9b9bfdefb22fd2747078acd22328799e36\",\"x-amz-request-id\":\"17F0717842E10094\",\"x-minio-deployment-id\":\"3dcca1de-e7ed-4caf-b5c2-33205bcbef58\",\"x-minio-origin-endpoint\":\"http://172.19.0.5:9000\"},\"s3\":{\"s3SchemaVersion\":\"1.0\",\"configurationId\":\"Config\",\"bucket\":{\"name\":\"ingest\",\"ownerIdentity\":{\"principalId\":\"minio\"},\"arn\":\"arn:aws:s3:::ingest\"},\"object\":{\"key\":\"simon%2Falcohol_ODV3.csv\",\"size\":284731,\"eTag\":\"52fedda7b019876c4f9858b6d1b3a940\",\"contentType\":\"text/csv\",\"userMetadata\":{\"content-type\":\"text/csv\"},\"sequencer\":\"17F0717846404FEB\"}},\"source\":{\"host\":\"127.0.0.1\",\"port\":\"\",\"userAgent\":\"MinIO (linux; amd64) minio-go/v7.0.55 MinIO Console/(dev)\"}}]}",
+  "MessageHeaders": {
+    "channel": 34,
+    "connection": "172.19.0.5:43756 -> 172.19.0.2:5672",
+    "exchange_name": "minio",
+    "node": "rabbit@e3dfb4adce21",
+    "properties": {
+      "headers": {
+        "minio-bucket": "aW5nZXN0",
+        "minio-event": "czM6T2JqZWN0Q3JlYXRlZDpQdXQ="
+      },
+      "content_type": "YXBwbGljYXRpb24vanNvbg=="
+    },
+    "routed_queues": [
+      "afregister",
+      "afload"
+    ],
+    "routing_keys": [
+      ""
+    ],
+    "user": "guest",
+    "vhost": "/"
+  }
+}
