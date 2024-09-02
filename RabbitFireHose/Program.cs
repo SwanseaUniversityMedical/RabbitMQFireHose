@@ -17,7 +17,7 @@ namespace RabbitFireHose
             if (args.Length > 0)
                 rabbitHost = args[0];
             else
-                rabbitHost = Environment.GetEnvironmentVariable("RABBITMQ_HOST") ?? "192.168.0.24";
+                rabbitHost = Environment.GetEnvironmentVariable("RABBITMQ_HOST") ?? "loadingbay";
 
             string directoryPath;
             if (args.Length > 1)

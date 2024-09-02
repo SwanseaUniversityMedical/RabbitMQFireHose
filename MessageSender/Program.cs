@@ -26,6 +26,8 @@ class MessageSender
             directoryPath = Environment.GetEnvironmentVariable("RABBITMQ_DIR") ??
                             Path.Combine(Environment.CurrentDirectory, "firehose");
 
+        directoryPath = @"C:\temp\loadingbay";
+
         if (!Directory.Exists(directoryPath))
         {
             Directory.CreateDirectory(directoryPath);
@@ -68,9 +70,12 @@ class MessageSender
                     if (properties.Headers.ContainsKey("exchange_name") && properties.Headers["exchange_name"].ToString() != "") 
                     {
                         string exchange = properties.Headers["exchange_name"].ToString();
-                        string routingKey = properties.Headers.ContainsKey("routing_key") ? properties.Headers["routing_key"].ToString() : "";
-                        channel.BasicPublish(exchange: exchange, routingKey: routingKey, basicProperties: properties, body: body);
-                        Console.WriteLine($"[x] Sent message to exchange '{exchange}' with routing key '{routingKey}' from file '{file}'");
+                        foreach (var r in (IList)properties.Headers["routing_keys"])
+                        {
+                            string routingKey = r.ToString() ?? "";
+                            channel.BasicPublish(exchange: exchange, routingKey: routingKey, basicProperties: properties, body: body);
+                            Console.WriteLine( $"[x] Sent message to exchange '{exchange}' with routing key '{routingKey}' from file '{file}'");
+                        }
                     }
                     else
                     {
